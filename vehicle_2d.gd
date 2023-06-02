@@ -31,7 +31,10 @@ func _physics_process(delta: float) -> void:
 	
 	for wheel in wheels:
 		if wheel.steering:
-			wheel.rotation = steering * deg_to_rad(max_steer_angle)
+			if wheel.position.y < 0:
+				wheel.rotation = -steering * deg_to_rad(max_steer_angle)
+			else:
+				wheel.rotation = steering * deg_to_rad(max_steer_angle)
 		if wheel.traction:
 			driving_wheels.append(wheel)
 	

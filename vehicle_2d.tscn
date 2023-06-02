@@ -28,6 +28,8 @@ shape = SubResource("CapsuleShape2D_3bx2j")
 position = Vector2(-7, -11)
 script = ExtResource("3_5ygrn")
 traction = true
+steering = true
+friction = 5.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="WheelBR"]
 modulate = Color(0, 0, 0, 1)
@@ -37,6 +39,8 @@ mesh = SubResource("QuadMesh_cyilf")
 position = Vector2(7, -11)
 script = ExtResource("3_5ygrn")
 traction = true
+steering = true
+friction = 5.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="WheelBL"]
 modulate = Color(0, 0, 0, 1)
@@ -47,6 +51,7 @@ position = Vector2(-7, 12)
 script = ExtResource("3_5ygrn")
 traction = true
 steering = true
+friction = 5.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="WheelFR"]
 modulate = Color(0, 0, 0, 1)
@@ -57,6 +62,7 @@ position = Vector2(7, 12)
 script = ExtResource("3_5ygrn")
 traction = true
 steering = true
+friction = 5.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="WheelFL"]
 modulate = Color(0, 0, 0, 1)
