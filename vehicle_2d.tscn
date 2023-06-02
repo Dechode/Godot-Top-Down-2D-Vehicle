@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://d237baxig8ntk"]
+
+[ext_resource type="Script" path="res://vehicle_2d.gd" id="1_70odq"]
+[ext_resource type="Script" path="res://wheel.gd" id="3_5ygrn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_aq56n"]
+size = Vector2(19.673, 32.397)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3bx2j"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_cyilf"]
+size = Vector2(5.961, 10)
+
+[node name="Vehicle2D" type="RigidBody2D"]
+mass = 1000.0
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_70odq")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+mesh = SubResource("QuadMesh_aq56n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3bx2j")
+
+[node name="WheelBR" type="Marker2D" parent="."]
+position = Vector2(-7, -11)
+script = ExtResource("3_5ygrn")
+traction = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="WheelBR"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_cyilf")
+
+[node name="WheelBL" type="Marker2D" parent="."]
+position = Vector2(7, -11)
+script = ExtResource("3_5ygrn")
+traction = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="WheelBL"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_cyilf")
+
+[node name="WheelFR" type="Marker2D" parent="."]
+position = Vector2(-7, 12)
+script = ExtResource("3_5ygrn")
+traction = true
+steering = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="WheelFR"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_cyilf")
+
+[node name="WheelFL" type="Marker2D" parent="."]
+position = Vector2(7, 12)
+script = ExtResource("3_5ygrn")
+traction = true
+steering = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="WheelFL"]
+modulate = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_cyilf")
